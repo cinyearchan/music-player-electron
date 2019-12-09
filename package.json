@@ -1,12 +1,41 @@
 {
-  "name": "electron-quick-start",
+  "name": "music-player-electron",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon --watch main.js --exec \"electron .\""
+    "start": "nodemon --watch main.js --exec \"electron .\"",
+    "dist": "build"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "build": {
+    "appId": "simpleMusicPlayer",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "background": "build/appdmg.png",
+      "icon": "build/icon.icns",
+      "iconSize": 100,
+      "contents": [
+        {
+          "x": 380,
+          "y": 280,
+          "type": "link",
+          "path": "/Applications"
+        },
+        {
+          "x": 110,
+          "y": 280,
+          "type": "file"
+        }
+      ],
+      "window": {
+        "width": 500,
+        "height": 500
+      }
+    }
+  },
+  "repository": "https://github.com/cinyearchan/music-player-electron",
   "keywords": [
     "Electron",
     "quick",
@@ -14,8 +43,8 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "cinyearchan",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^7.1.3",
     "electron-builder": "^21.2.0",
