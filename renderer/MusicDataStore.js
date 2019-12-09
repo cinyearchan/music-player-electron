@@ -8,14 +8,14 @@ class DataStore extends Store {
     this.tracks = this.get('tracks') || []
   }
 
-  saveTracks() {
+  saveTracks () {
     this.set('tracks', this.tracks)
     return this
   }
-  getTracks() {
+  getTracks () {
     return this.get('tracks') || []
   }
-  addTracks(tracks) {
+  addTracks (tracks) {
     const tracksWithProps = tracks.map(track => {
       return {
         id: uuidv4(),
@@ -28,6 +28,10 @@ class DataStore extends Store {
     })
 
     this.tracks = [...this.tracks, ...tracksWithProps]
+    return this.saveTracks()
+  }
+  deleteTrack (deletedId) {
+    this.tracks = this.tracks.filter(item => item.id !== deletedId)
     return this.saveTracks()
   }
 }
