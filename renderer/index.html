@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>音乐播放器</title>
+  <title>Electron 音乐播放器</title>
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../statics/fontawesome.all.css">
+  <link rel="stylesheet" href="../fontawesome.all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
   <link rel="stylesheet" href="./index.css">
 </head>
 
@@ -17,13 +16,17 @@
     <button type="button" id="add-music-button" class="btn btn-primary btn-lg btn-block mt-4">
       添加歌曲到曲库
     </button>
-    <div id="tracksList" class="mt-4"></div>
+    <div id="tracksList" class="mt-4">
+    </div>
   </div>
   <div class="container fixed-bottom bg-white pb-4">
-    <hr>
-    <div class="row my-2" id="player-status"></div>
+    <hr />
+    <div class="row my-2" id="player-status">
+    </div>
     <div class="progress">
-      <div class="progress-bar bg-success" id="player-progress" role="progressbar" style="width: 0%;">0%</div>
+      <div class="progress-bar bg-success" id="player-progress" role="progressbar" style="width: 0%;">
+        0%
+      </div>
     </div>
   </div>
   <script>

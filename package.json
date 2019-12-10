@@ -1,5 +1,5 @@
 {
-  "name": "music-player-electron",
+  "name": "simple-music-player",
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "main": "main.js",
@@ -33,6 +33,16 @@
         "width": 500,
         "height": 500
       }
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
     }
   },
   "repository": "https://github.com/cinyearchan/music-player-electron",
@@ -44,15 +54,17 @@
     "demo"
   ],
   "author": "cinyearchan",
-  "license": "MIT",
+  "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^7.1.3",
+    "electron": "^4.1.3",
     "electron-builder": "^21.2.0",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "electron-store": "^5.1.0",
-    "uuid": "^3.3.3"
+    "bootstrap": "^4.3.1",
+    "electron-store": "^3.2.0",
+    "jquery": "^3.4.1",
+    "popper.js": "^1.15.0",
+    "uuid": "^3.3.2"
   }
 }
