@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, dialog } = require('electron')
+const { app, BrowserWindow, ipcMain, dialog, Menu } = require('electron')
 const DataStore = require('./renderer/MusicDataStore')
 
 const myStore = new DataStore({'name': 'Music Data'})
@@ -20,6 +20,7 @@ class AppWindow extends BrowserWindow {
   }
 }
 app.on('ready', () => {
+  Menu.setApplicationMenu(null)
   const mainWindow = new AppWindow({}, './renderer/index.html')
   mainWindow.webContents.on('did-finish-load',() => {
     mainWindow.send('getTracks', myStore.getTracks())
